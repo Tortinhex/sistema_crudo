@@ -35,6 +35,8 @@ def createProduct():
             productForm.serial_number.data,
             productForm.branch.data,
             productForm.model.data,
+            productForm.quantity.data,
+            productForm.category.data,
             productForm.description.data,
             productForm.coast.data,
             provider_id
@@ -69,6 +71,8 @@ def updateProduct(id):
             productData.product_name  = productForm.product_name.data
             productData.serial_number = productForm.serial_number.data
             productData.branch        = productForm.branch.data
+            productData.model         = productForm.model.data
+            productData.category      = productForm.category.data
             productData.description   = productForm.description.data
             productData.coast         = productForm.coast.data
             db.session.commit()

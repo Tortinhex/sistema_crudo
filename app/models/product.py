@@ -15,6 +15,8 @@ class Product(db.Model):
     serial_number = db.Column(db.String(15), nullable=False)
     branch        = db.Column(db.String(15), nullable=False)
     model         = db.Column(db.String(15), nullable=False)
+    quantity      = db.Column(db.String(10), nullable=False)
+    category      = db.Column(db.String(15), nullable=False)
     description   = db.Column(db.Text      , nullable=False)
     coast         = db.Column(db.String(10), nullable=False)
     status        = db.Column(db.String(1),  nullable=True, default='A')
@@ -27,11 +29,13 @@ class Product(db.Model):
     # Provider      = db.relationship('Provider', foreign_keys=provider_id)
 
     # Classe inicializadora do modelo
-    def __init__(self, product_name, serial_number, branch, model, description, coast, provider_id):
+    def __init__(self, product_name, serial_number, branch, model, quantity, category, description, coast, provider_id):
         self.product_name  = product_name
         self.serial_number = serial_number
         self.branch        = branch
         self.model         = model
+        self.quantity      = quantity
+        self.category      = category
         self.description   = description
         self.coast         = coast
         self.provider_id   = provider_id

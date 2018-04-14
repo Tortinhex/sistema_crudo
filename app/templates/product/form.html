@@ -75,11 +75,11 @@
 
                 <div class="col-md-4">
                     <div class="form-group">
-                        <label for="">{{ productForm.coast.label }}</label>
-                        {{ productForm.coast(class="form-control") }}
-                        {% if productForm.errors.coast %}
+                        <label for="exampleFormControlSelect1">{{ productForm.provider.label }}</label>
+                        {{ productForm.provider(class="form-control") }}
+                        {% if productForm.errors.provider %}
                             <div class="alert alert-danger" role="alert">
-                                {% for e in productForm.errors.coast %}
+                                {% for e in productForm.errors.provider %}
                                     <li>{{ e }}</li>
                                 {% endfor %}
                             </div>
@@ -91,11 +91,39 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
-                        <label for="exampleFormControlSelect1">{{ productForm.provider.label }}</label>
-                        {{ productForm.provider(class="form-control") }}
-                        {% if productForm.errors.provider %}
+                        <label for="">{{ productForm.coast.label }}</label>
+                        {{ productForm.coast(class="form-control") }}
+                        {% if productForm.errors.coast %}
                             <div class="alert alert-danger" role="alert">
-                                {% for e in productForm.errors.provider %}
+                                {% for e in productForm.errors.coast %}
+                                    <li>{{ e }}</li>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="">{{ productForm.quantity.label }}</label>
+                        {{ productForm.quantity(class="form-control") }}
+                        {% if productForm.errors.quantity %}
+                            <div class="alert alert-danger" role="alert">
+                                {% for e in productForm.errors.quantity %}
+                                    <li>{{ e }}</li>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="">{{ productForm.category.label }}</label>
+                        {{ productForm.category(class="form-control") }}
+                        {% if productForm.errors.category %}
+                            <div class="alert alert-danger" role="alert">
+                                {% for e in productForm.errors.category %}
                                     <li>{{ e }}</li>
                                 {% endfor %}
                             </div>
