@@ -62,6 +62,7 @@ def updateProduct(id):
     choices = [(p.id, p.trading_name) for p in Provider.query.order_by('trading_name')]
     choices.insert(0, ('0', 'Selecione'))
     productForm.provider.choices = choices
+    providers = Provider.query.all()
 
     if "POST" == request.method:
         if productForm.validate_on_submit():
@@ -78,7 +79,8 @@ def updateProduct(id):
     return render_template(
         'product/form.html', 
         productForm=productForm,
-        providerForm=providerForm
+        providerForm=providerForm,
+        providers=providers
     )
 
 
