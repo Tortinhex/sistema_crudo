@@ -1,6 +1,5 @@
-storage.db
 venv
-migrations
+env
 __pycache__
 app/__pycache__
 app/controllers/__pycache__
