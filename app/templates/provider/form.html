@@ -1,0 +1,305 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Cadastro de Fornecedor</h1>
+    
+    <form action="" method="POST">
+        {{ providerForm.csrf_token }}
+
+        <div class="row">
+            <div class="col-md-12">
+                <legend class="underline">Dados do Fornecedor</legend>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="">{{ providerForm.trading_name.label }}</label>
+                    {{ providerForm.trading_name(class="form-control") }}
+                    {% if providerForm.errors.trading_name %}
+                        <div class="alert alert-danger" role="alert">
+                            {% for e in providerForm.errors.trading_name %}
+                                <li>{{ e }}</li>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="">{{ providerForm.company_name.label }}</label>
+                    {{ providerForm.company_name(class="form-control") }}
+                    {% if providerForm.errors.company_name %}
+                        <div class="alert alert-danger" role="alert">
+                            {% for e in providerForm.errors.company_name %}
+                                <li>{{ e }}</li>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="">{{ providerForm.document_number.label }}</label>
+                    {{ providerForm.document_number(class="form-control") }}
+                    {% if providerForm.errors.document_number %}
+                        <div class="alert alert-danger" role="alert">
+                            {% for e in providerForm.errors.document_number %}
+                                <li>{{ e }}</li>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="">{{ providerForm.cnae.label }}</label>
+                    {{ providerForm.cnae(class="form-control") }}
+                    {% if providerForm.errors.cnae %}
+                        <div class="alert alert-danger" role="alert">
+                            {% for e in providerForm.errors.cnae %}
+                                <li>{{ e }}</li>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="">{{ providerForm.ie.label }}</label>
+                    {{ providerForm.ie(class="form-control") }}
+                    {% if providerForm.errors.ie %}
+                        <div class="alert alert-danger" role="alert">
+                            {% for e in providerForm.errors.ie %}
+                                <li>{{ e }}</li>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="">{{ providerForm.im.label }}</label>
+                    {{ providerForm.im(class="form-control") }}
+                    {% if providerForm.errors.im %}
+                        <div class="alert alert-danger" role="alert">
+                            {% for e in providerForm.errors.im %}
+                                <li>{{ e }}</li>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="col-md-12">
+                <legend class="underline">Contato</legend>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="">{{ contactForm.phone.label }}</label>
+                    {{ contactForm.phone(class="form-control") }}
+                    {% if contactForm.errors.phone %}
+                        <div class="alert alert-danger" role="alert">
+                            {% for e in contactForm.errors.phone %}
+                                <li>{{ e }}</li>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="form-group">
+                    <label for="">{{ contactForm.email.label }}</label>
+                    {{ contactForm.email(class="form-control") }}
+                    {% if contactForm.errors.email %}
+                        <div class="alert alert-danger" role="alert">
+                            {% for e in contactForm.errors.email %}
+                                <li>{{ e }}</li>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">{{ contactForm.employee_name.label }}</label>
+                    {{ contactForm.employee_name(class="form-control") }}
+                    {% if contactForm.errors.employee_name %}
+                        <div class="alert alert-danger" role="alert">
+                            {% for e in contactForm.errors.employee_name %}
+                                <li>{{ e }}</li>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">{{ contactForm.employee_department.label }}</label>
+                    {{ contactForm.employee_department(class="form-control") }}
+                    {% if contactForm.errors.employee_department %}
+                        <div class="alert alert-danger" role="alert">
+                            {% for e in contactForm.errors.employee_department %}
+                                <li>{{ e }}</li>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="col-md-12">
+                <legend class="underline">Endereço</legend>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="">{{ addressForm.postal_code.label }}</label>
+                    {{ addressForm.postal_code(class="form-control") }}
+                    {% if addressForm.errors.postal_code %}
+                        <div class="alert alert-danger" role="alert">
+                            {% for e in addressForm.errors.postal_code %}
+                                <li>{{ e }}</li>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label for="">{{ addressForm.street.label }}</label>
+                    {{ addressForm.street(class="form-control") }}
+                    {% if addressForm.errors.street %}
+                        <div class="alert alert-danger" role="alert">
+                            {% for e in addressForm.errors.street %}
+                                <li>{{ e }}</li>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="">{{ addressForm.number.label }}</label>
+                    {{ addressForm.number(class="form-control") }}
+                    {% if addressForm.errors.number %}
+                        <div class="alert alert-danger" role="alert">
+                            {% for e in addressForm.errors.number %}
+                                <li>{{ e }}</li>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="">{{ addressForm.complement.label }}</label>
+                    {{ addressForm.complement(class="form-control") }}
+                    {% if addressForm.errors.complement %}
+                        <div class="alert alert-danger" role="alert">
+                            {% for e in addressForm.errors.complement %}
+                                <li>{{ e }}</li>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">{{ addressForm.district.label }}</label>
+                    {{ addressForm.district(class="form-control") }}
+                    {% if addressForm.errors.district %}
+                        <div class="alert alert-danger" role="alert">
+                            {% for e in addressForm.errors.district %}
+                                <li>{{ e }}</li>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">{{ addressForm.city.label }}</label>
+                    {{ addressForm.city(class="form-control") }}
+                    {% if addressForm.errors.city %}
+                        <div class="alert alert-danger" role="alert">
+                            {% for e in addressForm.errors.city %}
+                                <li>{{ e }}</li>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">{{ addressForm.state.label }}</label>
+                    {{ addressForm.state(class="form-control") }}
+                    {% if addressForm.errors.state %}
+                        <div class="alert alert-danger" role="alert">
+                            {% for e in addressForm.errors.state %}
+                                <li>{{ e }}</li>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">{{ addressForm.country.label }}</label>
+                    {{ addressForm.country(class="form-control") }}
+                    {% if addressForm.errors.country %}
+                        <div class="alert alert-danger" role="alert">
+                            {% for e in addressForm.errors.country %}
+                                <li>{{ e }}</li>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <a class="btn btn-danger" href="{{ url_for('indexProvider') }}">Voltar</a>
+        <button type="submit" class="btn btn-success float-right">Salvar</button>
+    </form>
+
+{% endblock %}

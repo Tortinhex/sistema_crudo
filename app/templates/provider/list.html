@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Lista de Fornecedores</h1>
+        </div>
+    </div>
+
+    <br>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <a href="{{ url_for('createProvider') }}" class="btn btn-success">Novo</a>        
+        </div>
+    </div>
+
+    <br>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nome do Fornecedor</th>
+                        <th>CNPJ</th>
+                        <th>Opções</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if not providers %}
+                        <tr>
+                            <td colspan="3">Sem fornecedores cadastrados</td>
+                        </tr>
+                    {% endif %}
+                    {% for p in providers: %}
+                        <tr>
+                            <td>{{ p.trading_name }}</td>
+                            <td>{{ p.document_number }}</td>
+                            <td>
+                                <a class="btn btn-primary btn-sm" href="{{ url_for('updateProvider', id=p.id) }}">Editar</a>
+                                <a class="btn btn-danger btn-sm" href="{{ url_for('deleteProvider', id=p.id) }}">Excluir</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

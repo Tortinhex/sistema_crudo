@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Papelaria</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+
+                <a class="navbar-brand" href="{{ url_for('index') }}">Papelaria</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item {{ 'active' if (request.path == '/') else '' }}">
+                            <a class="nav-link" href="{{ url_for('index') }}">Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item {{ 'active' if (request.path.find('/product') == 0) else '' }}">
+                            <a class="nav-link" href="{{ url_for('indexProduct') }}">Produtos</a>
+                        </li>
+                        <li class="nav-item {{ 'active' if (request.path.find('/provider') == 0) else '' }}">
+                            <a class="nav-link" href="{{ url_for('indexProvider') }}">Fornecedores</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <br>
+
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+        
+        <br>
+
+        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    </body>
+</html>

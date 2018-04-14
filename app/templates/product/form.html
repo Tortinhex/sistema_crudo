@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Cadastro de produtos</h1>
+    
+    <form action="" method="POST">
+        {{ productForm.csrf_token }}
+
+        <div class="row">
+            <div class="col-md-9">
+                <div class="form-group">
+                    <label for="">{{ productForm.product_name.label }}</label>
+                    {{ productForm.product_name(class="form-control") }}
+                    {% if productForm.errors.product_name %}
+                        <div class="alert alert-danger" role="alert">
+                            {% for e in productForm.errors.product_name %}
+                                <li>{{ e }}</li>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="">{{ productForm.serial_number.label }}</label>
+                    {{ productForm.serial_number(class="form-control") }}
+                    {% if productForm.errors.serial_number %}
+                        <div class="alert alert-danger" role="alert">
+                            {% for e in productForm.errors.serial_number %}
+                                <li>{{ e }}</li>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="">{{ productForm.branch.label }}</label>
+                    {{ productForm.branch(class="form-control") }}
+                    {% if productForm.errors.branch %}
+                        <div class="alert alert-danger" role="alert">
+                            {% for e in productForm.errors.branch %}
+                                <li>{{ e }}</li>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="">{{ productForm.model.label }}</label>
+                    {{ productForm.model(class="form-control") }}
+                    {% if productForm.errors.model %}
+                        <div class="alert alert-danger" role="alert">
+                            {% for e in productForm.errors.model %}
+                                <li>{{ e }}</li>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="">{{ productForm.coast.label }}</label>
+                    {{ productForm.coast(class="form-control") }}
+                    {% if productForm.errors.coast %}
+                        <div class="alert alert-danger" role="alert">
+                            {% for e in productForm.errors.coast %}
+                                <li>{{ e }}</li>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">{{ productForm.provider.label }}</label>
+                    {{ productForm.provider(class="form-control") }}
+                    {% if productForm.errors.provider %}
+                        <div class="alert alert-danger" role="alert">
+                            {% for e in productForm.errors.provider %}
+                                <li>{{ e }}</li>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="">{{ productForm.description.label }}</label>
+                    {{ productForm.description(class="form-control") }}
+                    {% if productForm.errors.description %}
+                        <div class="alert alert-danger" role="alert">
+                            {% for e in productForm.errors.description %}
+                                <li>{{ e }}</li>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <a class="btn btn-danger" href="{{ url_for('indexProduct') }}">Voltar</a>
+        <button type="submit" class="btn btn-success float-right">Salvar</button>
+    </form>
+
+{% endblock %}

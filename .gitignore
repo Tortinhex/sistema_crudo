@@ -1,0 +1,9 @@
+storage.db
+venv
+migrations
+__pycache__
+app/__pycache__
+app/controllers/__pycache__
+app/forms/__pycache__
+app/models/__pycache__
+app/routes/__pycache__
