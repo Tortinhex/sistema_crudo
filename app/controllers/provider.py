@@ -131,4 +131,6 @@ def deleteProvider(id):
         db.session.delete(c)
 
     db.session.commit()
+    flash('Fornecedor deletado com sucesso!', 'success')
+
     return redirect(url_for('indexProvider'))

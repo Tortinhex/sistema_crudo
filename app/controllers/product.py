@@ -22,6 +22,7 @@ def createProduct():
     choices = [(p.id, p.trading_name) for p in Provider.query.order_by('trading_name')]
     choices.insert(0, ('0', 'Selecione'))
     productForm.provider.choices = choices
+    providers = Provider.query.all()
 
     if productForm.validate_on_submit():
 
@@ -48,7 +49,8 @@ def createProduct():
     return render_template(
         'product/form.html', 
         productForm=productForm,
-        providerForm=providerForm
+        providerForm=providerForm,
+        providers=providers
     )
 
 
@@ -84,7 +86,10 @@ def updateProduct(id):
 def deleteProduct(id):
     productData  = Product.query.get(id)
     db.session.delete(productData)
+
     db.session.commit()
+    flash('Produto deletado com sucesso!', 'success')
+
     return redirect(url_for('indexProduct'))
 
 
