@@ -17,7 +17,7 @@ class Provider(db.Model):
     cnae            = db.Column(db.String(10), nullable=False)
     ie              = db.Column(db.String(10), nullable=False)
     im              = db.Column(db.String(10), nullable=False)
-    status          = db.Column(db.String(1),  nullable=True, default='A')
+    status          = db.Column(db.String(1),  nullable=True, default='1')
     created_by      = db.Column(db.String(30), nullable=True)
     created_at      = db.Column(db.DateTime,   nullable=True, default=datetime.utcnow)
     updated_by      = db.Column(db.String(30), nullable=True)

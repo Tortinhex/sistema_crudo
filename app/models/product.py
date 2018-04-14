@@ -19,7 +19,7 @@ class Product(db.Model):
     category      = db.Column(db.String(15), nullable=False)
     description   = db.Column(db.Text      , nullable=False)
     coast         = db.Column(db.String(10), nullable=False)
-    status        = db.Column(db.String(1),  nullable=True, default='A')
+    status        = db.Column(db.String(1),  nullable=True, default='1')
     created_by    = db.Column(db.String(30), nullable=True)
     created_at    = db.Column(db.DateTime,   nullable=True, default=datetime.utcnow)
     updated_by    = db.Column(db.String(30), nullable=True)
@@ -29,7 +29,7 @@ class Product(db.Model):
     # Provider      = db.relationship('Provider', foreign_keys=provider_id)
 
     # Classe inicializadora do modelo
-    def __init__(self, product_name, serial_number, branch, model, quantity, category, description, coast, provider_id):
+    def __init__(self, product_name, serial_number, branch, model, quantity, category, description, coast, status, provider_id):
         self.product_name  = product_name
         self.serial_number = serial_number
         self.branch        = branch
@@ -38,6 +38,7 @@ class Product(db.Model):
         self.category      = category
         self.description   = description
         self.coast         = coast
+        self.status        = status
         self.provider_id   = provider_id
         
     # Utilizado para exibir os registros do banco de dados de uma forma mais resumida

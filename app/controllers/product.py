@@ -39,6 +39,7 @@ def createProduct():
             productForm.category.data,
             productForm.description.data,
             productForm.coast.data,
+            productForm.status.data,
             provider_id
         )
 
@@ -75,6 +76,8 @@ def updateProduct(id):
             productData.category      = productForm.category.data
             productData.description   = productForm.description.data
             productData.coast         = productForm.coast.data
+            productData.status        = productForm.status.data
+            productData.provider_id   = productForm.provider.data
             db.session.commit()
 
             flash('Produto atualizado com sucesso!', 'success')

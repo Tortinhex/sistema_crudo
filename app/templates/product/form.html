@@ -89,7 +89,7 @@
             </div>
 
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="form-group">
                         <label for="">{{ productForm.coast.label }}</label>
                         {{ productForm.coast(class="form-control") }}
@@ -103,7 +103,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="form-group">
                         <label for="">{{ productForm.quantity.label }}</label>
                         {{ productForm.quantity(class="form-control") }}
@@ -117,13 +117,27 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="form-group">
                         <label for="">{{ productForm.category.label }}</label>
                         {{ productForm.category(class="form-control") }}
                         {% if productForm.errors.category %}
                             <div class="alert alert-danger" role="alert">
                                 {% for e in productForm.errors.category %}
+                                    <li>{{ e }}</li>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">{{ productForm.status.label }}</label>
+                        {{ productForm.status(class="form-control") }}
+                        {% if productForm.errors.status %}
+                            <div class="alert alert-danger" role="alert">
+                                {% for e in productForm.errors.status %}
                                     <li>{{ e }}</li>
                                 {% endfor %}
                             </div>

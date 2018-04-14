@@ -19,7 +19,7 @@ class Address(db.Model):
     state       = db.Column(db.String(30), nullable=False)
     country     = db.Column(db.String(30), nullable=False)
     postal_code = db.Column(db.String(8),  nullable=False)
-    status      = db.Column(db.String(1),  nullable=False, default='A')
+    status      = db.Column(db.String(1),  nullable=False, default='1')
     created_by  = db.Column(db.String(30), nullable=True)
     created_at  = db.Column(db.DateTime,   nullable=False, default=datetime.utcnow)
     updated_by  = db.Column(db.String(30), nullable=True)

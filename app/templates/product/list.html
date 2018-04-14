@@ -37,6 +37,8 @@
                     <tr>
                         <th>Nome do Produto</th>
                         <th>Descrição</th>
+                        <th>Qtd. Estoque</th>
+                        <th>Categoria</th>
                         <th>Opções</th>
                     </tr>
                 </thead>
@@ -50,6 +52,8 @@
                         <tr>
                             <td>{{ p.product_name }}</td>
                             <td>{{ p.description }}</td>
+                            <td>{{ p.quantity }}</td>
+                            <td>{{ p.category }}</td>
                             <td>
                                 <a class="btn btn-primary btn-sm" href="{{ url_for('updateProduct', id=p.id) }}">Editar</a>
                                 <a class="btn btn-danger btn-sm" href="{{ url_for('deleteProduct', id=p.id) }}">Excluir</a>

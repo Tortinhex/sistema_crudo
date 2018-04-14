@@ -12,3 +12,4 @@ class ProductForm(FlaskForm):
     quantity      = StringField('Quantidade', validators=[DataRequired()], render_kw={'placeholder': 'Ex: 10'})
     category      = StringField('Categoria', validators=[DataRequired()], render_kw={'placeholder': 'Categoria do Produto'})
     provider      = SelectField('Fornecedor', coerce=int)
+    status        = SelectField('Status', coerce=int, choices=[(1, 'Ativo'), (2, 'Inativo')])
