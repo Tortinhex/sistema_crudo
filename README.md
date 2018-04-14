@@ -5,17 +5,25 @@
 <br>
 
 ### 1. Instalação
+* Instalar o [Python](https://www.python.org/downloads/) na versão 3.x (OBS: Na instalação, escolha a opção "instalação avançada" e selecione todos os checkbox disponíveis. Além disso, defina o local de instalação no C:/)
+* Clonar o projeto em uma pasta (preferencialmente no C:/) com o comando <br>
+`git clone https://github.com/Tortinhex/sistema_crudo.git` <br>
+* Dentro da pasta do projeto, instale o ambiente virtual com o comando <br>
+`pip install virtualenv`
+* Criar o ambiente virtual com o comando <br>
+`virtualenv env -p C:/Python36-32/python.exe` OBS: Veja no C:/ da maquina o nome da pasta de instalação do python
+* Inicializar o ambiente virtual com o comando <br>
+`env/Scripts/activate`
+* Instalar as dependencias com o comando <br>
+`pip install -r requirements.txt`
+* Executar o projeto com o comando <br>
+`python run.py runserver`
 
-1 - Instalar o Python 3 com o pip <br>
-2 - Instalar o ambiente virtual com o comando <i>pip install virtualenv</i><br>
-3 - Executar clone do projeto<br>
-4 - Criar o ambiente virtual dentro da pasta do projeto com o comando <i>virtualenv env -p C:/Python36-32/python.exe</i><br>
-5 - Instalar as dependencias com o comando <i>pip install -r requirements.txt</i><br>
-6 - Criar a base de dados com o comando <i>python run.py db init</i><br>
-7 - Executar o migrate da base de dados com o comando <i>python run.py db migrate</i><br>
-8 - Executar o upgrade da base de dados com o comando <i>python run.py db upgrade</i><br>
 
 ### 2. Documentação
-1 - flask-alchemy <i>http://flask-sqlalchemy.pocoo.org</i><br>
-2 - flask-migratey <i>https://flask-migrate.readthedocs.io</i><br>
-3 - flask-wtf <i>https://flask-wtf.readthedocs.io</i><br>
+* Flask `http://flask.pocoo.org/`
+* Flask-sqlalchemy `http://flask-sqlalchemy.pocoo.org`
+* Flask-migrate `https://flask-migrate.readthedocs.io`
+* Flask-wtf `https://flask-wtf.readthedocs.io`
+* Twitter Bootstrap `https://getbootstrap.com/`
+* URL do projeto no heroku ``https://sis-papelaria-crd.herokuapp.com/provider
